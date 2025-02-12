@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h1>ATM Machine</h1>
+        <script>
+
+//Initialize
+let balance = 1000;
+let pin = 1234; 
+let enteredPin;
+
+alert("Welcome to the ATM Machine!");
+
+//Pin
+enteredPin = parseInt(prompt("Enter your 4-digit PIN: "));
+
+if (enteredPin === pin) {
+  alert("PIN is correct. Please choose an option:");
+  let option = prompt("Choose an option:\n1. Check Balance\n2. Withdraw Cash\n3. Deposit Cash\n4. Exit");
+
+  if (option === "1") {
+    checkBalance();
+  } else if (option === "2") {
+    withdraw();
+  } else if (option === "3") {
+    deposit();
+  } else if (option === "4") {
+    alert("Goodbye!");
+  } else {
+    alert("Invalid option. Please try again.");
+  }
+} else {
+  alert("Invalid PIN. Please try again.");
+}
+//Function to check balance
+function checkBalance() {
+  alert(`Your current balance is: ${balance}`);
+}
+
+//Function to withdraw
+function withdraw() {
+  let amount = parseInt(prompt("Enter amount to withdraw: "));
+  if (amount > balance) {
+    alert("Insufficient funds!");
+  } else {
+    balance -= amount;
+    alert(`You withdrew ${amount}. Your new balance is: ${balance}`);
+  }
+}
+
+//Function to deposit
+function deposit() {
+  let amount = parseInt(prompt("Enter amount to deposit: "));
+  balance += amount;
+  alert(`You deposited ${amount}. Your new balance is: ${balance}`);
+}
+
+//Function to Exit
+function Exit() {
+  alert("Thank you for using ATM ! Good Bye")
+}
+
+
+    </script>
+
+</body>
+</html>
