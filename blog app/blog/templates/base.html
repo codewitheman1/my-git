@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Blogs</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+    <!-- <header>
+        <div class="nav-left">
+            <a href="{% url 'home' %}">Django Blog</a>
+        </div>
+        <div class="nav-right">
+            <a href="{% url 'post_new' %}">New Blog Post</a>
+        </div>
+    </header> -->
+    <nav id="nav1">
+        <div class="nav-left">
+            <a href="{% url 'home' %}">Django Blog</a>
+        </div>
+        <div class="nav-right">
+            <a href="{% url 'post_new' %}">New Blog Post</a>
+        </div>
+    </nav>
+    {% if user.is_authenticated %}
+    <p>Hii {{ user.username }}</p>
+    <a href="{% url 'login' %}">login</a>
+    <a href="{% url 'logout' %}">Logout</a>
+    {% else %}
+    <p>User not found</p>
+    {% endif %}
+    <div>
+        {% block content %}
+        {% endblock content %}
+    </div>
+
+
+</body>
+</html>

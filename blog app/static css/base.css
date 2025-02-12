@@ -1,0 +1,25 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+}
+
+h1, a {
+    color: gray;
+}
+.post-entry {
+    margin: 0;
+    font-weight: 800;
+}
+.post-entry p {
+    color: brown;
+}
+#nav1{
+    display: flex;
+    justify-content: left;
+}
+/* .nav-left{
+    text-align: left;
+}
+.nav-right{
+    text-align: right;
+} */
